@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body class="bg-zinc-900 text-white">
+
+    <!-- <img id="bg-img" src="images/grid-node.jpg" alt="Node Grid"> -->
+    <img id="bg-img" src="images/bg-img-2.png" alt="Node Grid">
+    <div id="img-overlay"></div>
+
+    <nav class="bg-zinc-800 bg-opacity-0 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-light">P. L.</a>
+            <div>
+                <a href="#" class="text-white hover:text-zinc-300 px-4">Home</a>
+                <a href="#" class="text-white hover:text-zinc-300 px-4">About</a>
+                <a href="#" class="text-white hover:text-zinc-300 px-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center py-[20vh]">
+        <h1 class="text-6xl font-bold">Hello, I'm Philip</h1>
+        <div id="skills" class="flex flex-wrap justify-center mt-4 gap-2 mx-auto">
+        </div>
+    </header>
+
+    <div class="container mx-auto">
+        <div id="about" class="py-10">
+            <div class="container mx-auto p-6 frosted">
+                <h2 class="text-4xl font-bold text-start">About Me</h2>
+                <p class="mt-4 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, distinctio
+                    earum, quo alias ab autem molestiae consequatur neque ipsum ipsam quam modi reprehenderit officiis,
+                    illo assumenda? Quam vitae non reprehenderit! Dolorem dolore vel cupiditate doloribus distinctio
+                    esse inventore corrupti, tenetur enim architecto voluptas nihil quae consectetur recusandae
+                    voluptatum beatae saepe.</p>
+            </div>
+        </div>
+
+        <div id="projects" class="py-20">
+            <div class="container mx-auto p-6">
+                <h2 class="text-4xl font-bold text-start text-white">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                    <div class="p-4 rounded-lg frosted">
+                        <h3 class="text-xl font-bold">Project 1</h3>
+                        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, distinctio
+                            earum, quo alias ab autem molestiae consequatur neque ipsum ipsam quam modi reprehenderit
+                            officiis, illo assumenda? Quam vitae non reprehenderit! Dolorem dolore vel cupiditate
+                            doloribus distinctio esse inventore corrupti, tenetur enim architecto voluptas nihil quae
+                            consectetur recusandae voluptatum beatae saepe.</p>
+                    </div>
+                    <div class="p-4 rounded-lg frosted">
+                        <h3 class="text-xl font-bold">Project 2</h3>
+                        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, distinctio
+                            earum, quo alias ab autem molestiae consequatur neque ipsum ipsam quam modi reprehenderit
+                            officiis, illo assumenda? Quam vitae non reprehenderit! Dolorem dolore vel cupiditate
+                            doloribus distinctio esse inventore corrupti, tenetur enim architecto voluptas nihil quae
+                            consectetur recusandae voluptatum beatae saepe.</p>
+                    </div>
+                    <div class="p-4 rounded-lg frosted">
+                        <h3 class="text-xl font-bold">Project 3</h3>
+                        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, distinctio
+                            earum, quo alias ab autem molestiae consequatur neque ipsum ipsam quam modi reprehenderit
+                            officiis, illo assumenda? Quam vitae non reprehenderit! Dolorem dolore vel cupiditate
+                            doloribus distinctio esse inventore corrupti, tenetur enim architecto voluptas nihil quae
+                            consectetur recusandae voluptatum beatae saepe.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contact" class="py-20">
+                <div class="container mx-auto p-6 frosted">
+                    <h2 class="text-4xl font-bold text-start">Contact Me</h2>
+                    <p class="mt-4 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, distinctio
+                        earum, quo alias ab autem molestiae consequatur neque ipsum ipsam quam modi reprehenderit
+                        officiis,
+                        illo assumenda? Quam vitae non reprehenderit! Dolorem dolore vel cupiditate doloribus distinctio
+                        esse inventore corrupti, tenetur enim architecto voluptas nihil quae consectetur recusandae
+                        voluptatum beatae saepe.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-zinc-900 p-4 text-start">
+            <div class="container mx-auto flex flex-col">
+                <div id="collapseButton" class="text-zinc-500 text-center flex flex-row justify-center gap-2">
+                    <div class="font-semibold">Click to expand</div>
+                    <div id="footer-expand"><i class="bi bi-caret-up-fill"></i></div>
+                </div>
+
+                <div id="collapsable" class="collapsed mt-4">
+                    <!-- Social Media Links -->
+                    <div class="flex justify-center mb-4">
+                        <a href="https://twitter.com" target="_blank" class="text-white hover:text-purple-500 mx-2">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="text-white hover:text-purple-500 mx-2">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="text-white hover:text-purple-500 mx-2">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+
+                    <!-- Footer Navigation -->
+                    <div class="flex justify-center mb-4">
+                        <a href="#" class="text-white hover:text-purple-500 px-4">Home</a>
+                        <a href="#" class="text-white hover:text-purple-500 px-4">About</a>
+                        <a href="#" class="text-white hover:text-purple-500 px-4">Contact</a>
+                    </div>
+
+                    <!-- Copyright Notice -->
+                    <p class="text-sm text-zinc-500 text-center">&copy; 2024 Philip L. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- scripts -->
+        <script src="js/script.js"></script>
+</body>
+
+</html>
