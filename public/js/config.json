@@ -10,5 +10,12 @@
         "C#",
         "SQL",
         "Git"
-    ]
+    ],
+    "email": {
+        "receiver": {
+            "adress": "contact.masco@gmail.com",
+            "pw": "L0xix3r0l1",
+            "appPw": "ympe rwyi ghjm dnon"
+        }
+    }
 }

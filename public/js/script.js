@@ -47,6 +47,57 @@ function toggleFooter() {
     }
 }
 
+function loadContactForm() {
+    const form = document.querySelector('#contact form');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+
+        fetch('/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log('Success: ', data)
+        })
+        .catch((err) => {
+            console.error('Error: ', err)
+        });
+        disableSendButton();
+    });
+}
+
+function disableSendButton() {
+    const button = document.querySelector('#contact button');
+    let countdown = 30;
+
+    button.disabled = true;
+    button.innerText = `Send (${countdown}s)`;
+    button.classList.toggle('button-disabled');
+    
+    let intervalId = setInterval(() => {
+        countdown--;
+        button.innerText = `Send (${countdown}s)`;
+        
+        if (countdown == 0) {
+            clearInterval(intervalId);
+            button.disabled = false;
+            button.innerText = 'Send';
+            button.classList.toggle('button-disabled')
+        }
+    }, 1000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadConfig();
 
@@ -56,4 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initially hide the collapsable content
     document.getElementById('collapsable').style.display = 'none';
+
+    loadContactForm();
 });
+

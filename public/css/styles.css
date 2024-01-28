@@ -3,6 +3,15 @@
     padding: 0;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
+    transition: all .2s ease-in-out;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+*::selection {
+    background: white;
+    color: #2e2e2e;
+
 }
 
 #bg-img {
@@ -86,9 +95,15 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     position: relative;
+    cursor: default;
 }
 
 .skill:hover {
     transition: all .2s ease-in-out;
     border-color: rgba(255, 255, 255, 0.5)
+}
+
+.button-disabled {
+    background: #454545 !important;
+
 }
