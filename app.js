@@ -31,7 +31,7 @@ app.post('/email', (req, res) => {
         from: email,
         to: config.email.receiver.adress,
         subject: `Contact form Submission from "${name}"`,
-        text: `You have a new submission with the following message: ${message}`
+        text: `You have a new submission from ${email} with the following message: ${message}`
     };
 
     transporter.sendMail(mailOptions, function(err, info) {
