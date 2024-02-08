@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayyy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="">
+    <div id="container">
+        <div id="normal-card" class="">
+            <h1>Yayyyy!!!</h1>
+            <h3 class="belike"></h3>
+            <div class="card">
+                <div class="line">Roses are red,</div>
+                <div class="line">Violets are blue</div>
+                <div class="line">My dog is my favorite</div>
+                <div class="line">but you're fine too</div>
+            </div>
+        </div>
+        <div id="horny-card" class="hidden">
+            <h1>Yay. (horny bitchin' style)</h1>
+            <h3 class="belike"></h3>
+            <div class="card">
+                <div class="line">Roses are red,</div>
+                <div class="line">The sun gives off heat</div>
+                <div class="line">If your legs are tired,</div>
+                <div class="line">Use my face as a seat</div>
+            </div>
+        </div>
+    </div>
+    <div class="theme-switch">
+        <p>This site was written baked like a roll 🍃</p>
+        <div>
+            <div id="theme-label">
+                NSFW
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="nsfw-slider">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <style>
+        .card {
+            perspective: 1000px;
+        }
+
+        .line {
+            display: block;
+            transition: transform .12s;
+            transform-origin: center;
+        }      
+    </style>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const lines = document.querySelectorAll('.line');
+
+            lines.forEach(line => {
+                line.addEventListener('mousemove', function (e) {
+                    const boundingBox = this.getBoundingClientRect();
+                    const x = e.clientX - boundingBox.left;
+                    const y = e.clientY - boundingBox.top;
+                    const centerX = boundingBox.width / 2;
+                    const centerY = boundingBox.height / 2;
+
+                    const rotationFactor = 30;
+                    const deltaX = (x - centerX) / centerX;
+                    const deltaY = (y - centerY) / centerY;
+                    const rotateY = deltaX * rotationFactor; // Rotation sensitivity, adjust as needed
+                    const rotateX = deltaY * -rotationFactor; // Rotation sensitivity, adjust as needed
+                    const scaleFactor = 1.25;
+
+                    this.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scaleX(${scaleFactor}) scaleY(${scaleFactor})`;
+                });
+
+                line.addEventListener('mouseleave', function () {
+                    this.style.transform = 'rotateX(0) rotateY(0)';
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

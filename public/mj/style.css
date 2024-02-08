@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+*::selection {
+    color: #000;
+    background: #fff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    background-color: #ffe0f0; /* Soft pink background */
+    color: #333;
+    text-align: center;
+    background-image: linear-gradient(to right, #ff9a9e 0%, #fad0c4 100%); /* Romantic gradient background */
+}
+
+#password-protect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Darker backdrop for contrast */
+    backdrop-filter: blur(30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    color: #fff;
+    font-family: 'Parisienne', cursive; /* Use a romantic, cursive font */
+}
+
+#password-protect input, #password-protect button {
+    padding: 1rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ffafc9; /* Soft pink border */
+}
+
+#password-protect input {
+    width: 450px;
+}
+
+#password-protect #disclaimer {
+    width: 450px;
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    color: #777;
+}
+
+#password-protect button {
+    cursor: pointer;
+    background-color: #ffafc9; /* Soft pink button */
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+    width: 150px;
+}
+
+#password-protect button:hover {
+    background-color: #ff6781; /* Darker shade on hover */
+}
+
+#countdown {
+    font-size: 2rem;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#countdown:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+#timer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+#timer span {
+    display: inline-block;
+    padding: 20px;
+    background: #fad0c4; /* Matching the background gradient */
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    vertical-align: middle;
+    font-size: 40px;
+    color: #fff; /* White text for better contrast */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+#waitforit {
+    color: #fff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* Page 2 */
+
+#love-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#love-container img {
+    width: 400px;
+}
+
+#love-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+#love-buttons button {
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+}
+
+#love-buttons #yes {
+    background: rgb(150, 255, 150);
+    z-index: 2;
+}
+
+#love-buttons #no {
+    background: rgb(255, 150, 150);
+    z-index: 1;
+}

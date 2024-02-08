@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Present</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="password-protect" class="">
+        <input type="password" id="password-input" placeholder="Enter Password">
+        
+        <div id="disclaimer">
+            <p>By clicking on 'Enter' you accept that unauthorized access to this webpage may lead to permanent restrictions to this domain/webservice</p>
+            <p>By clicking on 'Enter' you accept that so-called 'Cookies' such as the successful login may be saved for future access</p>
+        </div>
+
+        <button onclick="checkPassword()" id="password-button">Enter</button>
+    </div>
+    <div id="countdown" class="hidden">
+        <div id="timer">
+            <span id="days"></span>
+            <span id="hours"></span>
+            <span id="minutes"></span>
+            <span id="seconds"></span>
+        </div>
+    </div>
+    
+    <div id="waitforit">Wait for it...</div>
+    
+    <img src="" alt="Cuddle gif" id="waiting-gif" style="width: 200px;">
+
+    <script src="script.js"></script>
+</body>
+
+</html>

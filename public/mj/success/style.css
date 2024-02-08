@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+*::selection {
+    color: #000;
+    background: #fff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffe0f0;
+    color: #333;
+    text-align: center;
+    background-image: linear-gradient(to right, #ff9a9e 0%, #fad0c4 100%);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#container > div {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+#container > div > h1 {
+    margin-bottom: 50px;
+}
+
+#container > div > h3 {
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#container > div > h3::before {
+    content: "You be like";
+    background: rgb(180, 255, 180);
+    color: rgb(90, 180, 90);
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+#container > div > .card {
+    margin-top: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    flex-grow: 1;
+    border: 2px solid black;
+}
+
+#container > div > .card > div {
+    margin: 10px 0;
+    font-size: 32px;
+}
+
+.theme-switch {
+    width: 500px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme-switch > p {
+    font-size: 14px;
+    opacity: .5;
+}
+
+.theme-switch > div {
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    background: #e4e4e4; /* Lighter background for better visibility */
+    border-radius: 34px; /* Rounded corners for the switch itself */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    transition: .4s;
+    border-radius: 34px; /* Ensures the slider inherits the switch's rounded corners */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: white;
+    transition: .4s;
+    border-radius: 50%; /* Circular shape for the slider knob */
+}
+
+input:checked + .slider {
+    background: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Adjustments for the 'horny' theme */
+body.horny {
+    background-image: linear-gradient(to bottom right, #330406 0%, #440344 100%);
+}
+
+body.horny #horny-card {
+    color: #ffdfdf;
+}
+
+body.horny #horny-card h3 {
+    color: #b48f8f;
+}
+
+body.horny #horny-card h3::before {
+    content: "Me be like";
+    background: rgb(255, 180, 180);
+    color: rgb(180, 90, 90);
+}
+
+body.horny #horny-card .card {
+    border: 2px solid #fff;
+}
+
+body.horny .theme-switch {
+    color: #fff;
+}
+
+body.horny .theme-switch > div > #theme-label {
+    color: #fff;
+}
+
+body.horny .switch {
+    background: #6d5e5e; /* Darker background for the switch to fit the 'horny' theme */
+}
+
+body.horny .slider {
+    background: #a8a8a8; /* Darker slider background for better contrast in 'horny' theme */
+}
+
+body.horny input:checked + .slider {
+    background: #db7093; /* Pinkish color for the slider when active in 'horny' theme */
+}
