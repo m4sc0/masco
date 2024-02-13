@@ -1,3 +1,8 @@
+// wenn du hier rein schaust findest du die aufloesung:
+// geh auf folgende adresse 'philiploebl.online/mj/secret-love.html'
+// dann siehst du die 2. seite, von da kommst du auf die 3.
+// jetzt musst du nur noch diesen kommentar finden <3
+
 document.addEventListener('DOMContentLoaded', function() {
     // Check for login status only if the password input exists
     if (document.getElementById('password-input')) {

@@ -85,6 +85,13 @@ app.post("/email", (req, res) => {
         });
 });
 
+<<<<<<< HEAD
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}`);
 });
+=======
+
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Listening at http://localhost:${port}`)
+})
+>>>>>>> 412cbec (small changes made to the valentines present)
