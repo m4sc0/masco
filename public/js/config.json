@@ -1,21 +1,24 @@
 {
-    "skills": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Python",
-        "Java",
-        "C#",
-        "SQL",
-        "Git"
-    ],
-    "email": {
-        "receiver": {
-            "adress": "contact.masco@gmail.com",
-            "pw": "L0xix3r0l1",
-            "appPw": "ympe rwyi ghjm dnon"
-        }
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Python",
+    "Java",
+    "C#",
+    "SQL",
+    "Git"
+  ],
+  "email": {
+    "receiver": {
+      "adress": "contact.masco@gmail.com",
+      "pw": "L0xix3r0l1",
+      "appPw": "ympe rwyi ghjm dnon"
     }
+  },
+  "strichliste": {
+    "counter": 0
+  }
 }
