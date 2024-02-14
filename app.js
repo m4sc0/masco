@@ -41,12 +41,25 @@ app.get("/strichliste/remove", (req, res) => {
     res.sendStatus(200);
 });
 
+app.post("/strichliste/set", (req, res) => {
+    if (req.body.value) {
+        setCounter(req.body.value);
+        res.sendStatus(200);
+        return;
+    }
+    res.sendStatus(500);
+})
+
 app.get("/strichliste/info", (req, res) => {
     res.status(200).json({ counter: config.strichliste.counter });
 });
 
 function updateCounter(change) {
-    config.strichliste.counter += change;
+    setCounter(parseInt(config.strichliste.counter) + parseInt(change));
+}
+
+function setCounter(value) {
+    config.strichliste.counter = value;
     fs.writeFile(configPath, JSON.stringify(config, null, 2), err => {
         if (err) {
             console.error('Error writing to file: ', err);
