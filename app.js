@@ -27,23 +27,46 @@ app.get("/strichliste", (req, res) => {
     res.sendFile(__dirname + '/public/strichliste/index.html');
 })
 
-app.get("/strichliste/add", (req, res) => {
-    updateCounter(1);
+app.get("/strichliste/add/mj", (req, res) => {
+    updateCounter(1, "mj");
     res.sendStatus(200);
 });
 
-app.get("/strichliste/remove", (req, res) => {
+app.get("/strichliste/add/philip", (req, res) => {
+    updateCounter(1, "philip");
+    res.sendStatus(200);
+});
+
+app.get("/strichliste/remove/mj", (req, res) => {
     if (config.strichliste.counter <= 0) {
         res.sendStatus(403);
         return;
     }
-    updateCounter(-1);
+    updateCounter(-1, "mj");
     res.sendStatus(200);
 });
 
-app.post("/strichliste/set", (req, res) => {
+app.get("/strichliste/remove/philip", (req, res) => {
+    if (config.strichliste.counter <= 0) {
+        res.sendStatus(403);
+        return;
+    }
+    updateCounter(-1, "philip");
+    res.sendStatus(200);
+});
+
+app.post("/strichliste/set/mj", (req, res) => {
     if (req.body.value) {
-        setCounter(req.body.value);
+        setCounter(req.body.value, req.body.person);
+        res.sendStatus(200);
+        return;
+    }
+    res.sendStatus(500);
+})
+
+app.post("/strichliste/set/philip", (req, res) => {
+    if (req.body.value) {
+        setCounter(req.body.value, req.body.person);
         res.sendStatus(200);
         return;
     }
@@ -51,15 +74,23 @@ app.post("/strichliste/set", (req, res) => {
 })
 
 app.get("/strichliste/info", (req, res) => {
-    res.status(200).json({ counter: config.strichliste.counter });
+    res.status(200).json({ 
+        mj: {
+            counter: config.strichliste.mj.counter
+        },
+        philip: {
+            counter: config.strichliste.philip.counter
+        }
+     });
 });
 
-function updateCounter(change) {
-    setCounter(parseInt(config.strichliste.counter) + parseInt(change));
+function updateCounter(change, person) {
+    setCounter(parseInt(config.strichliste[person].counter) + parseInt(change), person);
 }
 
-function setCounter(value) {
-    config.strichliste.counter = value;
+function setCounter(value, person) {
+    config.strichliste[person].counter = value;
+
     fs.writeFile(configPath, JSON.stringify(config, null, 2), err => {
         if (err) {
             console.error('Error writing to file: ', err);

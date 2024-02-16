@@ -5,25 +5,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Strichliste</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body class="bg-neutral-900 p-2 pt-6 items-center overflow-hidden">
-        <div id="container"
-            class="h-screen flex justify-center items-center flex-col gap-5">
-            <h1 class="text-5xl text-neutral-100 text-center">Strichliste</h1>
-            <div id="counter"
-                class="text-7xl text-neutral-200 text-center mt-6">
+    <body class="bg-neutral-900 p-2 pt-6 items-center overflow-x-hidden md:overflow-hidden">
+        <div id="main" class="w-screen flex flex-col md:flex-row items-center justify-evenly">
+            <div id="philip-container"
+                class="h-screen flex justify-center items-center flex-col gap-5">
+                <h1 class="text-5xl text-neutral-100 text-center">Strichliste
+                    für Philip</h1>
+                <div id="counter"
+                    class="text-7xl text-neutral-200 text-center mt-6">
 
+                </div>
+                <div class="text-2xl text-neutral-600 text-center ml-6">...mal
+                    hat er schon sorry gesagt</div>
+
+                <div id="buttons" class="mt-6 p-2 w-min mx-auto flex gap-3">
+                    <button id="addBtn"
+                        class="py-2 px-4 bg-neutral-600 text-neutral-100 text-2xl rounded-lg">Add</button>
+                    <button id="removeBtn"
+                        class="py-2 px-4 bg-neutral-600 text-neutral-100 text-2xl rounded-lg">Remove</button>
+                    <button id="setBtn"
+                        class="py-2 px-4 bg-neutral-600 text-neutral-100 text-2xl rounded-lg text-nowrap">Set
+                        Value</button>
+                </div>
             </div>
-            <div class="text-2xl text-neutral-600 text-center ml-6">...mal hab
-                ich schon sorry gesagt</div>
+            <div class="divider div-md hidden md:block"></div>
+            <div class="divider div-sm block md:hidden"></div>
+            <div id="mj-container"
+                class="h-screen flex justify-center items-center flex-col gap-5">
+                <h1 class="text-5xl text-neutral-100 text-center">Strichliste
+                    für MJ</h1>
+                <div id="counter"
+                    class="text-7xl text-neutral-200 text-center mt-6">
 
-            <div id="buttons" class="mt-6 p-2 w-min mx-auto flex gap-3">
-                <button id="addBtn"
-                    class="py-2 px-4 bg-neutral-600 text-neutral-100 text-2xl rounded-lg">Add</button>
-                <button id="removeBtn"
-                    class="py-2 px-4 bg-neutral-600 text-neutral-100 text-2xl rounded-lg">Remove</button>
-                <button id="setBtn"
-                    class="py-2 px-4 bg-neutral-600 text-neutral-100 text-2xl rounded-lg text-nowrap">Set Value</button>
+                </div>
+                <div class="text-2xl text-neutral-600 text-center ml-6">...mal
+                    hat sie schon sorry gesagt</div>
+
+                <div id="buttons" class="mt-6 p-2 w-min mx-auto flex gap-3">
+                    <button id="addBtn"
+                        class="py-2 px-4 bg-neutral-600 text-neutral-100 text-2xl rounded-lg">Add</button>
+                    <button id="removeBtn"
+                        class="py-2 px-4 bg-neutral-600 text-neutral-100 text-2xl rounded-lg">Remove</button>
+                    <button id="setBtn"
+                        class="py-2 px-4 bg-neutral-600 text-neutral-100 text-2xl rounded-lg text-nowrap">Set
+                        Value</button>
+                </div>
             </div>
         </div>
 

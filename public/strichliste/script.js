@@ -1,81 +1,90 @@
-const addBtn = document.getElementById('addBtn');
-const removeBtn = document.getElementById('removeBtn');
-const setBtn = document.getElementById('setBtn');
-const counter = document.getElementById('counter');
+const people = [
+    "philip",
+    "mj"
+]
 
-addBtn.addEventListener('click', () => {
-    fetch('/strichliste/add')
-        .then(res => {
-            if (res.ok) {
-                // Counter erhöht, aktualisiere den Zähler
-                updateCounter();
-            } else {
-                console.error('Failed to increment counter');
-            }
-        })
-        .catch(error => {
-            console.error('Error occurred while incrementing counter:', error);
-        });
+people.forEach(person => {
+    const addBtn = document.querySelector(`#${person}-container #addBtn`);
+    const removeBtn = document.querySelector(`#${person}-container #removeBtn`);
+    const setBtn = document.querySelector(`#${person}-container #setBtn`);
+
+    addBtn.addEventListener('click', () => adding(person));
+    removeBtn.addEventListener('click', () => removing(person));
+    setBtn.addEventListener('click', () => setting(person));
 });
 
-removeBtn.addEventListener('click', () => {
-    fetch('/strichliste/remove')
-        .then(res => {
+function adding(person) {
+    fetch("/strichliste/add/" + person)
+        .then((res) => {
             if (res.ok) {
-                // Counter verringert, aktualisiere den Zähler
+                updateCounter();
+            } else {
+                console.error("Failed to increment counter");
+            }
+        })
+        .catch((error) => {
+            console.error("Error occured while incrementing counter: ", error);
+        });
+}
+
+function removing(person) {
+    fetch('/strichliste/remove/' + person)
+        .then((res) => {
+            if (res.ok) {
                 updateCounter();
             } else {
                 console.error('Failed to decrement counter');
             }
         })
-        .catch(error => {
-            console.error('Error occurred while decrementing counter:', error);
+        .catch((error) => {
+            console.error('Error occured while decremting counter: ', error);
         });
-});
+}
 
-setBtn.addEventListener('click', () => {
-    let input = window.prompt("Please enter a value that cannot be less or equal to 0:");
+function setting(person) {
+    let input = window.prompt(
+        "Please enter a value that cannot be less or requal to 0: "
+    );
     if (input && input < 0) {
         console.error('Too Low!');
         return;
     }
     if (input) {
-        fetch('/strichliste/set', {
-            method: 'POST',
+        fetch('/strichliste/set/' + person, {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify({ value: input })
+            body: JSON.stringify({ value: input, person: person })
         })
-            .then(res => {
+            .then((res) => {
                 if (!res.ok) {
-                    console.error('Error setting the value. Please contact an admin about this issue!');
+                    console.error("Error setting value. Please contact an admin about this issue!")
                     return;
-                }
+                };
                 updateCounter();
             })
-            .catch(error => {
-                console.error('Error setting the value. Please contact an admin about this issue!: ', error);
+            .catch((error) => {
+                console.error("Error setting value. Please contact an admin about this issue: ", error);
             })
     }
-})
+}
 
-// Funktion zum Aktualisieren des Zählers
 function updateCounter() {
-    fetch('/strichliste/info')
-        .then(res => res.json())
-        .then(data => {
-            counter.innerText = data.counter;
+    fetch("/strichliste/info")
+        .then((res) => res.json())
+        .then((data) => {
+            document.querySelector('#philip-container #counter').innerText = data.philip.counter;
+            document.querySelector('#mj-container #counter').innerText = data.mj.counter;
         })
-        .catch(error => {
-            console.error('Error occurred while fetching counter info:', error);
+        .catch((error) => {
+            console.error("Error occurred while fetching counter info:", error);
         });
 }
 
-// Beim Laden der Seite den Zähler initialisieren
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     updateCounter();
     setInterval(() => {
         updateCounter();
     }, 100);
-})
+});
